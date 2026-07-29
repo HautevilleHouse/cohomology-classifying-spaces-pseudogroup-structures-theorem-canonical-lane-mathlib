@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import CohomologyClassifyingSpacesPseudogroupStructuresTheoremCanonicalLaneLean.PrincipalBundleLayer
+import CohomologyClassifyingSpacesPseudogroupStructuresTheoremCanonicalLaneLean.CohomologySheafLayer
+import CohomologyClassifyingSpacesPseudogroupStructuresTheoremCanonicalLaneLean.PseudogroupStructureLayer
+
+namespace HautevilleHouse
+namespace CohomologyClassifyingSpacesPseudogroupStructuresTheoremCanonicalLaneLean
+
+def bridgeClosed (A : AdmissibleClass) : Prop :=
+  NativeBridgeClosed A.object
+
+theorem bridge_from_admissible_class (A : AdmissibleClass) :
+    bridgeClosed A := by
+  exact And.intro A.object.sourceKeyChecked A.object.theoremObjectChecked
+
+end CohomologyClassifyingSpacesPseudogroupStructuresTheoremCanonicalLaneLean
+end HautevilleHouse
